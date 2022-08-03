@@ -1,0 +1,15 @@
+cmake_minimum_required (VERSION 3.0)
+project(gmProject-liuzhixing)
+
+set(CMAKE_CXX_STANDARD 11)
+
+if(NOT CMAKE_BUILD_TYPE)
+	message(STATUS "No build type selected, default to Release")
+	set(CMAKE_BUILD_TYPE "Release")
+endif()
+
+add_executable(gmProject-liuzhixing src/main.cpp src/object.cpp src/vector.cpp)
+
+target_link_libraries(gmProject-liuzhixing opengl32)
+link_directories(${PROJECT_SOURCE_DIR}/lib/glut)
+target_link_libraries(gmProject-liuzhixing glut32)
